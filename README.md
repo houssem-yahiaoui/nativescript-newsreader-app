@@ -11,5 +11,7 @@ simplicity of working with nativescript ! using Card Views and many more.
  
  In case you want to play with it, feed free and **contribute** and **fork** it, 
  Hopefully you will have some **Fun** Hacking with it !
+
+
  
  ##PEACE ;) 
