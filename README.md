@@ -14,4 +14,3 @@ simplicity of working with nativescript ! using Card Views and many more.
 
 
  
- ##PEACE ;) 
