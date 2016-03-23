@@ -1,0 +1,51 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="loaded" xmlns:x="nativescript-statusbar" xmlns:Card="nativescript-cardview" xmlns:drawer="nativescript-telerik-ui/sidedrawer">
+    <x:StatusBar ios:barStyle="light" android:barStyle="#212121" />
+    <ActionBar title="test" backgroundColor="#424242" color="#f1f1f1">
+        <ActionBar.titleView>
+            <StackLayout orientation="horizontal" ios:horizontalAlignment="center" android:horizontalAlignment="left">
+                <Image src="res://nbc" class="action-image" />
+                <Label text="NBC Top Stories" textWrap="true" class="headerText" />
+
+            </StackLayout>
+        </ActionBar.titleView>
+    </ActionBar>
+    <ActivityIndicator busy="{{ isLoading }}" />
+
+    <drawer:RadSideDrawer>
+        <drawer:RadSideDrawer.mainContent>
+            <StackLayout>
+                <ListView items="{{ data }}" itemTap="getInfo">
+                    <ListView.itemTemplate>
+
+                        <!--   <label text="{{mediaGroups[0].contents[0].url}}"/> -->
+                        <Card:CardView margin="10">
+                            <grid-layout rows="200, auto, auto" columns="auto, auto, *">
+                                <image src="{{mediaGroups[0].contents[0].url}}" stretch="aspectFill" colSpan="3" row="0" />
+                                <label text="{{title}}" class="info" textWrap="true" row="1" colSpan="4" />
+                                <Label text="{{author}}" textWrap="true" row="2" colSpan="4" />
+                            </grid-layout>
+                        </Card:CardView>
+                    </ListView.itemTemplate>
+                </ListView>
+            </StackLayout>
+        </drawer:RadSideDrawer.mainContent>
+        <drawer:RadSideDrawer.drawerContent>
+            <StackLayout cssClass="drawerContent">
+                <StackLayout cssClass="headerContent">
+
+                    <Image src="res://nbc" class="action-image" />
+
+                    <Label text="Header" />
+                </StackLayout>
+                <StackLayout cssClass="drawerMenuContent">
+                    <Label text="Top Stories" class="drawerMenuItem" />
+                    <Label text="Local News" class="drawerMenuItem" />
+                    <Label text="Wierd" class="drawerMenuItem" />
+                    <Label text="Sport" class="drawerMenuItem" />
+
+                </StackLayout>
+            </StackLayout>
+        </drawer:RadSideDrawer.drawerContent>
+    </drawer:RadSideDrawer>
+
+</Page>

@@ -1,0 +1,32 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" xmlns:x="nativescript-statusbar">
+    <x:StatusBar ios:barStyle="light" android:barStyle="#212121" />
+
+    <ActionBar backgroundColor="#424242" color="#f1f1f1">
+        <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="goBack" />
+        <ActionBar.titleView>
+            <StackLayout orientation="horizontal" ios:horizontalAlignment="center" android:horizontalAlignment="left">
+
+                <Label text="{{passedData.title}}" textWrap="true" class="singleHeaderText" />
+
+            </StackLayout>
+        </ActionBar.titleView>
+    </ActionBar>
+    <ScrollView>
+        <grid-layout rows="200, auto, auto, auto" columns="auto, auto, *">
+            <image src="{{passedData.mediaGroups[0].contents[0].url}}" stretch="aspectFill" colSpan="3" row="0" />
+            <!--<Label class="info" textWrap="true" row="1" colSpan="4">
+                <Label.formattedText>
+                    <FormattedString>
+                        <FormattedString.spans>
+                            <Span text="{{passedData.title}}" fontAttributes="Bold" />
+                        </FormattedString.spans>
+                    </FormattedString>
+                </Label.formattedText>
+            </Label>-->
+            <Label text="{{passedData.author}}" textWrap="true" row="2" colSpan="4" class="meta"/>
+            <Label text="{{passedData.publishedDate}}" textWrap="true" row="2" colSpan="4" class="publishedDate"/>
+            <Label text="{{passedData.content}}" textWrap="true" row="4" colSpan="4" class="singleContent"/>
+        </grid-layout>
+    </ScrollView>
+
+</Page>
